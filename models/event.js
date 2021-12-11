@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
-var eventSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+const eventSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -15,6 +15,10 @@ var eventSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
+  },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
 });
 
